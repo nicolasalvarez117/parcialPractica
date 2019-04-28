@@ -1,3 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "input.h"
+#include "empleados.h"
+#include "ordenamiento.h"
+#include <string.h>
+#include <ctype.h>
+#define FALSE 0
+#define TRUE 1
 int getString(char *msg,
               char *msgError,
               int minimo,
@@ -90,6 +99,7 @@ int getNumber(char *msg,char *msgError,int desde,int hasta,int minimo,int maximo
     int retorno = -1;
     char buffer[4096];
     int bufferInt;
+    int flag = 0;
     if(msg != NULL &&
        msgError != NULL &&
        desde < hasta &&
@@ -97,19 +107,27 @@ int getNumber(char *msg,char *msgError,int desde,int hasta,int minimo,int maximo
        reintentos >= 0 &&
        resultado != NULL)
     {
-        if(!getString(msg,msgError,minimo,maximo,reintentos,buffer))
-        {
-           if(isValidNumber(buffer))
-           {
-              bufferInt = atoi(buffer);
-              if(isValidRange(desde,hasta,bufferInt))
-              {
-                 strncpy(resultado,buffer,maximo);
-                 retorno = 0;
-              }
+       do
+       {
+            if(!getString(msg,msgError,minimo,maximo,reintentos,buffer))
+            {
+                if(isValidNumber(buffer))
+                {
+                    bufferInt = atoi(buffer);
+                    if(isValidRange(desde,hasta,bufferInt))
+                    {
+                        strncpy(resultado,buffer,maximo);
+                        retorno = 0;
+                        flag = 1;
+                    }
 
-           }
-        }
+                }
+            }
+            else
+            {
+                printf(msgError);
+            }
+       }while(flag != 1);
     }
     return retorno;
 
@@ -139,3 +157,42 @@ int isValidRange(int desde,int hasta,int numero)
     return FALSE;
 
 }
+
+void getSexo(char *msg,char *msgError,char* resultado)
+{
+    int sexoCorrecto = 2;
+
+    while(sexoCorrecto != 1)
+    {
+        printf(msg);
+        resultado = getchar();
+        resultado = toupper(resultado);
+        if(resultado == 'M' || resultado == 'F')
+        {
+            sexoCorrecto = 1;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

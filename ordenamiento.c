@@ -1,24 +1,29 @@
-void ordenarPersonasApellido(ePersonas arrayPersonas[],int cantidadElementos,ePersonas auxiliarPersonas)
+#include <stdio.h>
+#include <stdlib.h>
+#include "input.h"
+#include "empleados.h"
+#include "ordenamiento.h"
+void ordenarEmpleadosApellido(eEmpleados arrayEmpleados[],int cantidadElementos,eEmpleados auxiliarEmpleados)
 {
     int i,j;
 
     for(i=0; i < cantidadElementos - 1; i++)
                 {
-                    if(arrayPersonas[i].estado == -1)
+                    if(arrayEmpleados[i].estado == -1)
                     {
                         continue;
                     }
                     for(j=i+1; j < cantidadElementos; j++)
                     {
-                        if(arrayPersonas[j].legajo == -1)
+                        if(arrayEmpleados[j].legajo == -1)
                         {
                             continue;
                         }
-                        if(strcmp(arrayPersonas[i].apellido,arrayPersonas[j].apellido) > 0)
+                        if(strcmp(arrayEmpleados[i].apellido,arrayEmpleados[j].apellido) > 0)
                         {
-                            auxiliarPersonas = arrayPersonas[j];
-                            arrayPersonas[j] = arrayPersonas[i];
-                            arrayPersonas[i] = auxiliarPersonas;
+                            auxiliarEmpleados = arrayEmpleados[j];
+                            arrayEmpleados[j] = arrayEmpleados[i];
+                            arrayEmpleados[i] = auxiliarEmpleados;
                         }
                     }
                 }

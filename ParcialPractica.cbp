@@ -31,9 +31,21 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="empleados.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="empleados.h" />
+		<Unit filename="input.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="input.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="ordenamiento.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ordenamiento.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

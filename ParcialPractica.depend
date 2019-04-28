@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1556164154 source:c:\users\administrador\documents\nico projecto\parcialpractica-master\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"input.h"
+	"empleados.h"
+	"ordenamiento.h"
+
+1556130584 c:\users\administrador\documents\nico projecto\parcialpractica-master\input.h
+
+1556164154 c:\users\administrador\documents\nico projecto\parcialpractica-master\empleados.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1556074254 c:\users\administrador\documents\nico projecto\parcialpractica-master\ordenamiento.h
+
+1556131650 source:c:\users\administrador\documents\nico projecto\parcialpractica-master\input.c
+	<stdio.h>
+	<stdlib.h>
+	"input.h"
+	"empleados.h"
+	"ordenamiento.h"
+	<string.h>
+	<ctype.h>
+
+1556073778 source:c:\users\administrador\documents\nico projecto\parcialpractica-master\ordenamiento.c
+	<stdio.h>
+	<stdlib.h>
+	"input.h"
+	"empleados.h"
+	"ordenamiento.h"
+
+1556164154 source:c:\users\administrador\documents\nico projecto\parcialpractica-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	"input.h"
+	"empleados.h"
+	"ordenamiento.h"
+
